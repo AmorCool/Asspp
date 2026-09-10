@@ -22,6 +22,28 @@ struct AuthenticationProtocolChecks {
         }
         precondition(StoreAuthenticationProtocol.storeIdentifier("143441-1,29") == "143441")
         precondition(StoreAuthenticationProtocol.storeIdentifier("143465-19,32") == "143465")
+        // Login's Foundation cookie jar and ApplePackage use different domain forms.
+        let cookie = HTTPCookie(properties: [
+            .name: "synthetic-session", .value: "fixture", .domain: ".itunes.apple.com",
+            .path: "/WebObjects/", .secure: "TRUE",
+        ])!
+        precondition(StoreAuthenticationProtocol.storeCookieDomain(cookie.domain) == "itunes.apple.com")
+        precondition(StoreAuthenticationProtocol.storeCookieDomain(".P25-BUY.ITUNES.APPLE.COM") == "p25-buy.itunes.apple.com")
+        precondition(StoreAuthenticationProtocol.storeCookieDomain(nil) == nil)
+        precondition(StoreAuthenticationProtocol.storeCookieDomain(".") == "")
+        for invalid in [nil, "", ".", "attacker.example", "itunes.apple.com.attacker.example"] as [String?] {
+            precondition(StoreAuthenticationProtocol.foundationCookieDomain(invalid) == nil)
+        }
+        let restored = HTTPCookie(properties: [
+            .name: cookie.name, .value: cookie.value, .path: cookie.path, .secure: "TRUE",
+            .domain: StoreAuthenticationProtocol.foundationCookieDomain("itunes.apple.com")!,
+        ])!
+        let jar = URLSessionConfiguration.ephemeral.httpCookieStorage!
+        jar.setCookie(restored)
+        precondition(jar.cookies(for: URL(string: "https://p25-buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/volumeStoreDownloadProduct")!)?.contains(where: { $0.name == cookie.name }) == true)
+        for url in ["http://p25-buy.itunes.apple.com/WebObjects/", "https://p25-buy.itunes.apple.com/other/", "https://attacker.example/WebObjects/"] {
+            precondition(jar.cookies(for: URL(string: url)!)?.contains(where: { $0.name == cookie.name }) != true)
+        }
         let body = try StoreAuthenticationProtocol.body(email: "test@example.invalid", password: "&<测试>", code: " 123 456\n", guid: "024153535050", attempt: 1)
         let plist = StoreAuthenticationProtocol.plist(body)!
         precondition(plist["password"] as? String == "&<测试>123456")

@@ -90,6 +90,20 @@ enum StoreAuthenticationProtocol {
         return nil
     }
 
+    /// Foundation preserves a leading dot on domain cookies; ApplePackage 1.2.7
+    /// expects a bare domain when deciding which cookies to send to store pods.
+    static func storeCookieDomain(_ domain: String?) -> String? {
+        domain.map { String($0.drop(while: { $0 == "." })).lowercased() }
+    }
+
+    /// Restore ApplePackage's domain/subdomain semantics in Foundation's jar.
+    static func foundationCookieDomain(_ domain: String?) -> String? {
+        guard let domain = storeCookieDomain(domain),
+              domain == "itunes.apple.com" || domain.hasSuffix(".itunes.apple.com")
+        else { return nil }
+        return "." + domain
+    }
+
     static func storeIdentifier(_ header: String) -> String {
         String(header.split(whereSeparator: { $0 == "-" || $0 == "," }).first ?? "")
     }

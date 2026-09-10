@@ -86,7 +86,8 @@ class AppStore {
     @discardableResult
     func save(email: String, account: ApplePackage.Account) -> UserAccount {
         logger.info("saving account for user")
-        let account = UserAccount(account: account)
+        var account = UserAccount(account: account)
+        account.normalizeStoreCookies()
         accounts = (accounts.filter { $0.account.email != email } + [account])
             .sorted { $0.account.email < $1.account.email }
         return account
@@ -109,7 +110,11 @@ class AppStore {
         guard var account = await accounts.first(where: { $0.id == id }) else {
             throw AuthenticationError.accountNotFound
         }
+        // Migrate cookies saved by the first SAP release before any store request.
+        // This also covers download, version history and license requests.
+        account.normalizeStoreCookies()
         let result = try await body(&account)
+        account.normalizeStoreCookies()
         let updatedAccount = account
         // Re-resolve by id: the accounts array may have been mutated (added,
         // removed, re-sorted) during the await, so the original index is stale.

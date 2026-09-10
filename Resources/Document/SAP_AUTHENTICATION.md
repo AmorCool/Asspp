@@ -16,6 +16,12 @@ allocate executable code buffers, require JIT, private Apple entitlements, or a
 Mac helper. Each login has its own short-lived emulator and ephemeral cookie jar.
 The app verifies all four Apple assets before loading them into the interpreter.
 
+Foundation represents domain cookies with a leading dot; ApplePackage 1.2.7's
+request matcher expects the bare domain. Login export normalizes that format,
+and every store operation also normalizes previously saved account cookies.
+Restoring cookies for SAP reauthentication preserves their subdomain scope.
+License acquisition refreshes through the same signed authenticator.
+
 Login requests follow only HTTPS redirects to the documented buy/pN-buy Apple
 hosts and authentication path. Certificate validation remains enabled, including
 Debug builds. Unstructured HTTP 204, 404 and 5xx responses get at most three
@@ -54,8 +60,8 @@ swiftc Asspp/Backend/AppStore/StoreAuthenticationProtocol.swift \
 ```
 
 These cover credential-redirect restrictions, XML/binary plist decoding, password
-and code serialization, storefront parsing, code challenges, and transient retry
-classification. They do not substitute for a real Apple account login test.
+and code serialization, storefront parsing, cookie domain conversion and scope,
+code challenges, and transient retry classification. They do not substitute for a real Apple account login test.
 
 A successful public SAP handshake proves that the signing engine works. It does
 not by itself establish that Apple will accept any particular account or network.

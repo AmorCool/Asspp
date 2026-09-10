@@ -152,8 +152,7 @@ actor SignedStoreAuthenticator {
 
     private func restore(_ cookies: [Cookie]) {
         for cookie in cookies {
-            guard let domain = cookie.domain,
-                  domain == "itunes.apple.com" || domain.hasSuffix(".itunes.apple.com") else { continue }
+            guard let domain = StoreAuthenticationProtocol.foundationCookieDomain(cookie.domain) else { continue }
             var properties: [HTTPCookiePropertyKey: Any] = [
                 .name: cookie.name, .value: cookie.value, .path: cookie.path, .domain: domain,
                 .secure: cookie.secure ? "TRUE" : "FALSE",
@@ -166,7 +165,7 @@ actor SignedStoreAuthenticator {
 
     private func savedCookies() -> [Cookie] {
         (cookieStorage.cookies ?? []).map {
-            Cookie(name: $0.name, value: $0.value, path: $0.path, domain: $0.domain,
+            Cookie(name: $0.name, value: $0.value, path: $0.path, domain: StoreAuthenticationProtocol.storeCookieDomain($0.domain),
                    expiresAt: $0.expiresDate?.timeIntervalSince1970, httpOnly: $0.isHTTPOnly, secure: $0.isSecure)
         }
     }

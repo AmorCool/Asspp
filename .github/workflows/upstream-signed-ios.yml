@@ -12,7 +12,7 @@ on:
         options:
           - upstream
           - fork
-        default: upstream
+        default: fork
       source_branch:
         description: "Branch name to build (e.g. main)"
         required: false
@@ -70,7 +70,7 @@ jobs:
 
           EVENT_NAME="${GITHUB_EVENT_NAME}"
           DEFAULT_UPSTREAM_REPO="Lakr233/Asspp"
-          SOURCE_KIND="${SOURCE_KIND_INPUT:-upstream}"
+          SOURCE_KIND="${SOURCE_KIND_INPUT:-fork}"
           LEGACY_REF_INPUT="${UPSTREAM_REF_INPUT:-}"
           SOURCE_BRANCH_RAW="${SOURCE_BRANCH_INPUT:-}"
           SOURCE_REPO_RAW="${SOURCE_REPO_INPUT:-$DEFAULT_UPSTREAM_REPO}"
@@ -90,9 +90,9 @@ jobs:
               REQUESTED_REF="main"
             fi
           else
-            SOURCE_REPO="${DEFAULT_UPSTREAM_REPO}"
+            SOURCE_REPO="${GITHUB_REPOSITORY}"
             REQUESTED_REF="main"
-            SOURCE_KIND="upstream"
+            SOURCE_KIND="fork"
           fi
 
           if [[ "${REQUESTED_REF}" == refs/* ]]; then
@@ -122,7 +122,7 @@ jobs:
               TAG_NAME="manual-upstream-${SAFE_BRANCH}-${SHORT_SHA}"
             fi
           else
-            TAG_NAME="upstream-main-${SHORT_SHA}"
+            TAG_NAME="fork-main-${SHORT_SHA}"
           fi
 
           API_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/tags/${TAG_NAME}"
@@ -207,6 +207,20 @@ jobs:
             fi
           done
           xcodebuild -version
+
+      - name: Prepare native build tools
+        run: |
+          command -v cmake >/dev/null || brew install cmake
+          command -v xcbeautify >/dev/null || brew install xcbeautify
+
+      - name: Check authentication protocol
+        run: |
+          if [ -f source/Resources/Tests/AuthenticationProtocolChecks.swift ]; then
+            swiftc source/Asspp/Backend/AppStore/StoreAuthenticationProtocol.swift \
+              source/Resources/Tests/AuthenticationProtocolChecks.swift \
+              -o "${RUNNER_TEMP}/asspp-auth-checks"
+            "${RUNNER_TEMP}/asspp-auth-checks"
+          fi
 
       - name: Install signing assets
         id: signing

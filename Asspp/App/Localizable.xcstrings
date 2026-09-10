@@ -179,6 +179,7 @@
       }
     },
     "2FA Code (Optional)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -387,6 +388,7 @@
       }
     },
     "Although the 2FA code is marked as optional, it's because we don't know if you have it enabled or just entered an incorrect password. Provide it if you have 2FA enabled.\n\nhttps://support.apple.com/102606" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -462,6 +464,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple ID"
+          }
+        }
+      }
+    },
+    "Apple returned an invalid login redirect. No credentials were forwarded." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 返回的登录重定向无效，账户信息未被转发。"
+          }
+        }
+      }
+    },
+    "Apple returned an unsupported login configuration. Update the app and try again." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 返回了暂不支持的登录配置，请更新 App 后重试。"
+          }
+        }
+      }
+    },
+    "Apple's login service exceeded the retry limit. Try again later." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 登录服务超出重试次数，请稍后重试。"
+          }
+        }
+      }
+    },
+    "Apple's login service returned an unexpected response (HTTP %lld). This response does not indicate an incorrect password or a missing verification code. Try again later." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 登录服务返回异常响应（HTTP %lld）。该响应不能说明密码错误或缺少验证码，请稍后重试。"
           }
         }
       }
@@ -1147,6 +1189,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "邮箱（Apple ID）"
+          }
+        }
+      }
+    },
+    "Enter the six-digit verification code from your trusted Apple device." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入受信任 Apple 设备上收到的六位验证码。"
+          }
+        }
+      }
+    },
+    "Enter the verification code sent by Apple, then authenticate again." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入 Apple 发送的验证码，然后再次验证。"
           }
         }
       }
@@ -2567,6 +2629,16 @@
         }
       }
     },
+    "The verification code was rejected. Enter a new code and try again." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "验证码被拒绝，请输入新的验证码后重试。"
+          }
+        }
+      }
+    },
     "This account is used to download this package. If you choose to AirDrop, your target device must sign in or previously signed in to this account and have at least one app installed." : {
       "localizations" : {
         "en" : {
@@ -2725,6 +2797,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更新"
+          }
+        }
+      }
+    },
+    "Verification Code" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "验证码"
           }
         }
       }

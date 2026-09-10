@@ -79,7 +79,7 @@ class AppStore {
                 deviceIdentifier = randomIdentifier
             }
         }
-        logger.info("using device identifier: \(deviceIdentifier)")
+        logger.info("device identifier configured")
         ApplePackage.Configuration.deviceIdentifier = deviceIdentifier
     }
 

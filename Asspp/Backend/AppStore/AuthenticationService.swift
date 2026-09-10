@@ -18,10 +18,11 @@ extension AppStore {
     func authenticate(email: String, password: String, code: String) async throws -> UserAccount {
         logger.info("starting authentication for user")
         do {
-            let appleAccount = try await ApplePackage.Authenticator.authenticate(
+            let appleAccount = try await SignedStoreAuthenticator().authenticate(
                 email: email,
                 password: password,
                 code: code,
+                guid: deviceIdentifier,
                 cookies: [],
             )
             let userAccount = save(email: email, account: appleAccount)
@@ -42,10 +43,11 @@ extension AppStore {
             throw AuthenticationError.accountNotFound
         }
         do {
-            let newAppleAccount = try await ApplePackage.Authenticator.authenticate(
+            let newAppleAccount = try await SignedStoreAuthenticator().authenticate(
                 email: account.account.email,
                 password: account.account.password,
                 code: "",
+                guid: deviceIdentifier,
                 cookies: account.account.cookie,
             )
             let updatedAccount = save(email: account.account.email, account: newAppleAccount)

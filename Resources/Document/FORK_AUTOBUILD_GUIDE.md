@@ -4,7 +4,7 @@ This guide explains how to set up your own fork of Asspp to automatically build,
 
 This allows you to:
 
-1.  **Always have the latest version**: The workflow automatically pulls changes from the upstream repository.
+1.  **Build your fork**: Scheduled and default manual runs build your fork's `main` branch, including its authentication fixes.
 2.  **OTA Installation**: Install the app directly on your iPhone via a web link, without a computer.
 3.  **Automatic Signing**: Uses your own Apple Developer certificate.
 
@@ -76,7 +76,8 @@ _To get Base64 on macOS:_ `base64 -i certificate.p12 | pbcopy`
 1.  Go to the **Actions** tab in your forked repository.
 2.  Select the **Upstream Signed iOS Build** workflow on the left.
 3.  Click **Run workflow**.
-    - You can leave the inputs as default.
+    - Leave `source_kind=fork` and choose the branch containing your changes.
+    - Choosing `upstream` builds upstream source and excludes this fork's authentication fix.
 4.  Wait for the build to complete (usually 5-10 minutes).
 
 ## 5. Install
@@ -93,3 +94,11 @@ Once the workflow finishes:
 - **"Unable to Verify App"**: Go to iOS Settings -> General -> VPN & Device Management and trust your certificate.
 - **Installation waits forever**: Ensure your device's UDID is included in the Provisioning Profile you uploaded.
 - **Build fails**: Check the Actions logs. Common errors include mismatched Bundle IDs or expired certificates.
+
+## SAP authentication in this fork
+
+The build prepares a pinned Unicorn interpreter and verifies SAP assets downloaded
+from Apple. CMake must be available on the runner. No Apple account login password
+or 2FA code belongs in Actions secrets; the signing secrets above only sign the
+installable app. See [SAP_AUTHENTICATION.md](SAP_AUTHENTICATION.md) for the runtime,
+build inputs, tests and third-party licenses.

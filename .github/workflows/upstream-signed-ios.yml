@@ -222,6 +222,16 @@ jobs:
             "${RUNNER_TEMP}/asspp-auth-checks"
           fi
 
+      - name: Check download protocol
+        run: |
+          if [ -f source/Resources/Tests/DownloadProtocolChecks.swift ]; then
+            swiftc source/Asspp/Backend/AppStore/StoreAuthenticationProtocol.swift \
+              source/Asspp/Backend/AppStore/StoreDownloadProtocol.swift \
+              source/Resources/Tests/DownloadProtocolChecks.swift \
+              -o "${RUNNER_TEMP}/asspp-download-checks"
+            "${RUNNER_TEMP}/asspp-download-checks"
+          fi
+
       - name: Install signing assets
         id: signing
         env:

@@ -4,22 +4,6 @@
     "" : {
       "shouldTranslate" : false
     },
-    "@Lakr233" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "@Lakr233"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "@Lakr233"
-          }
-        }
-      }
-    },
     "%@" : {
       "localizations" : {
         "en" : {
@@ -49,6 +33,17 @@
       },
       "shouldTranslate" : false
     },
+    "%@ (%lld)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$lld)"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "%@ - %@" : {
       "localizations" : {
         "en" : {
@@ -64,17 +59,6 @@
           }
         }
       }
-    },
-    "%@ (%lld)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ (%2$lld)"
-          }
-        }
-      },
-      "shouldTranslate" : false
     },
     "%@+" : {
       "comment" : "A label displaying the minimum operating system version required to install a software package. The argument is the minimum OS version as a string.",
@@ -99,6 +83,22 @@
     },
     "%lld" : {
       "shouldTranslate" : false
+    },
+    "%lld Results" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Results"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 个结果"
+          }
+        }
+      }
     },
     "%lld apps installed by Asspp" : {
       "comment" : "A footer label at the bottom of the list of installed apps, showing the number of apps installed. The argument is the number of installed apps.",
@@ -126,22 +126,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Asspp 已安装 %lld 个应用"
-          }
-        }
-      }
-    },
-    "%lld Results" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Results"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld 个结果"
           }
         }
       }
@@ -179,6 +163,7 @@
       }
     },
     "2FA Code (Optional)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -206,6 +191,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "88888888888"
+          }
+        }
+      }
+    },
+    "@Lakr233" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "@Lakr233"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "@Lakr233"
           }
         }
       }
@@ -338,22 +339,6 @@
         }
       }
     },
-    "Add an Apple ID to start downloading IPA packages." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add an Apple ID to start downloading IPA packages."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "添加 Apple ID 以开始下载 IPA 软件包。"
-          }
-        }
-      }
-    },
     "Add Download" : {
       "localizations" : {
         "en" : {
@@ -366,6 +351,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "添加下载"
+          }
+        }
+      }
+    },
+    "Add an Apple ID to start downloading IPA packages." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add an Apple ID to start downloading IPA packages."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加 Apple ID 以开始下载 IPA 软件包。"
           }
         }
       }
@@ -387,6 +388,7 @@
       }
     },
     "Although the 2FA code is marked as optional, it's because we don't know if you have it enabled or just entered an incorrect password. Provide it if you have 2FA enabled.\n\nhttps://support.apple.com/102606" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -466,6 +468,22 @@
         }
       }
     },
+    "Apple rejected the download (code: %@)." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 拒绝了下载请求（错误码：%@）。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple rejected the download (code: %@)."
+          }
+        }
+      }
+    },
     "Apple rejected the login (code: %@)." : {
       "localizations" : {
         "en" : {
@@ -478,6 +496,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple 拒绝了登录请求（错误码：%@）。"
+          }
+        }
+      }
+    },
+    "Apple requires an account confirmation. Open the App Store with this account, complete any prompts, then try again." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 要求确认账号信息。请使用此账号打开 App Store，完成相关提示后重试。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple requires an account confirmation. Open the App Store with this account, complete any prompts, then try again."
+          }
+        }
+      }
+    },
+    "Apple returned an invalid download redirect." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 返回了无效的下载重定向地址。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple returned an invalid download redirect."
           }
         }
       }
@@ -510,6 +560,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple returned an unsupported login configuration. Update the app and try again."
+          }
+        }
+      }
+    },
+    "Apple returned incomplete or mismatched package information." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 返回的安装包信息不完整或与请求的 App 不符。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple returned incomplete or mismatched package information."
+          }
+        }
+      }
+    },
+    "Apple returned no downloadable package from either download service. This does not mean the app does not exist. Check this account's license, store region, and the requested version. See Settings > Logs for details." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 的两个下载接口均未返回可下载的安装包。这不代表 App 不存在。请检查当前账号的许可、商店地区及所选版本，详情见“设置 > 日志”。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple returned no downloadable package from either download service. This does not mean the app does not exist. Check this account's license, store region, and the requested version. See Settings > Logs for details."
+          }
+        }
+      }
+    },
+    "Apple returned no version history for this app and platform." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple returned no version history for this app and platform."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 未返回此 App 在所选平台上的历史版本。"
+          }
+        }
+      }
+    },
+    "Apple's download service returned an invalid response (HTTP %lld)." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple 下载服务返回了无效响应（HTTP %lld）。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple's download service returned an invalid response (HTTP %lld)."
           }
         }
       }
@@ -1066,6 +1180,22 @@
         }
       }
     },
+    "Download Requested" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download Requested"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已请求下载"
+          }
+        }
+      }
+    },
     "Download and save the IPA file." : {
       "localizations" : {
         "en" : {
@@ -1094,22 +1224,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "下载失败。"
-          }
-        }
-      }
-    },
-    "Download Requested" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download Requested"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已请求下载"
           }
         }
       }
@@ -1740,22 +1854,6 @@
         }
       }
     },
-    "No account available for this region." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No account available for this region."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "此地区没有可用的账户。"
-          }
-        }
-      }
-    },
     "No Accounts" : {
       "localizations" : {
         "en" : {
@@ -1784,6 +1882,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "无下载"
+          }
+        }
+      }
+    },
+    "No account available for this region." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No account available for this region."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此地区没有可用的账户。"
           }
         }
       }
@@ -2515,22 +2629,6 @@
         }
       }
     },
-    "Show in Finder" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show in Finder"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在访达中显示"
-          }
-        }
-      }
-    },
     "Show Logs" : {
       "localizations" : {
         "en" : {
@@ -2561,6 +2659,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "显示密码"
+          }
+        }
+      }
+    },
+    "Show in Finder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show in Finder"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在访达中显示"
           }
         }
       }
@@ -2727,6 +2841,22 @@
         }
       }
     },
+    "This ID, combined with a random seed generated on this device, can be used to download packages from the App Store." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This ID, combined with a random seed generated on this device, can be used to download packages from the App Store."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此 ID 与在此设备上生成的随机种子结合，可以用于从 App Store 下载软件包。"
+          }
+        }
+      }
+    },
     "This account is used to download this package. If you choose to AirDrop, your target device must sign in or previously signed in to this account and have at least one app installed." : {
       "localizations" : {
         "en" : {
@@ -2755,22 +2885,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "此邮箱用于登录 Apple 服务。"
-          }
-        }
-      }
-    },
-    "This ID, combined with a random seed generated on this device, can be used to download packages from the App Store." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This ID, combined with a random seed generated on this device, can be used to download packages from the App Store."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "此 ID 与在此设备上生成的随机种子结合，可以用于从 App Store 下载软件包。"
           }
         }
       }
@@ -2819,6 +2933,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "类型"
+          }
+        }
+      }
+    },
+    "Unable to determine the current version for this platform. Try again later or select a specific historical version." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法确定此平台的当前版本。请稍后重试，或选择具体的历史版本。"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to determine the current version for this platform. Try again later or select a specific historical version."
           }
         }
       }

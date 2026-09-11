@@ -30,12 +30,11 @@ extension Installer {
     var iTunesLink: URL {
         var comps = URLComponents()
         comps.scheme = "itms-services"
-        comps.path = "/"
+        comps.host = ""
         comps.queryItems = [
             URLQueryItem(name: "action", value: "download-manifest"),
             URLQueryItem(name: "url", value: plistEndpoint.absoluteString),
         ]
-        comps.port = port
         return comps.url!
     }
 

@@ -1442,6 +1442,7 @@
       }
     },
     "Grant local network permission to install apps and communicate with system services." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1615,22 +1616,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "安装证书"
-          }
-        }
-      }
-    },
-    "Install Completed" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Install Completed"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "安装已完成"
           }
         }
       }
@@ -2013,6 +1998,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "软件包稍后可以在下载页面安装。"
+          }
+        }
+      }
+    },
+    "Package Transfer Completed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Package Transfer Completed"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "安装包传输已完成"
           }
         }
       }

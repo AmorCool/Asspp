@@ -40,7 +40,7 @@
             case let .completed(result):
                 switch result {
                 case .success:
-                    String(localized: "Install Completed")
+                    String(localized: "Package Transfer Completed")
                 case let .failure(failure):
                     failure.localizedDescription
                 }
@@ -76,7 +76,7 @@
                     }
                 }
                 VStack {
-                    Text("Grant local network permission to install apps and communicate with system services.")
+                    Text("Grant local network permission to install apps. Install and trust the SSL certificate for on-device installation.")
                 }
                 .font(.system(.footnote, design: .rounded))
                 .foregroundStyle(.secondary)

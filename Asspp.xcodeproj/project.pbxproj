@@ -258,6 +258,7 @@
 			baseConfigurationReferenceAnchor = 50DCBBB42F346C57007100D2 /* Configuration */;
 			baseConfigurationReferenceRelativePath = Debug.xcconfig;
 			buildSettings = {
+					ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -311,6 +312,7 @@
 			baseConfigurationReferenceAnchor = 50DCBBB42F346C57007100D2 /* Configuration */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
 			buildSettings = {
+					ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -363,6 +365,7 @@
 			baseConfigurationReferenceAnchor = 50DCBBB42F346C57007100D2 /* Configuration */;
 			baseConfigurationReferenceRelativePath = Debug.xcconfig;
 			buildSettings = {
+					ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_KEY_CFBundleDisplayName = Asspp;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Asspp requires this permission to communicate with install service on your device.";
@@ -380,6 +383,7 @@
 			baseConfigurationReferenceAnchor = 50DCBBB42F346C57007100D2 /* Configuration */;
 			baseConfigurationReferenceRelativePath = Release.xcconfig;
 			buildSettings = {
+					ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXCLUDED_SOURCE_FILE_NAMES = (
 					"$(inherited)",
 					"LookInsideServer*",
